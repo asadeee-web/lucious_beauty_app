@@ -5,7 +5,7 @@ import 'package:lucious_beauty_app/core/constants/decorations.dart';
 import 'package:lucious_beauty_app/core/constants/strings.dart';
 import 'package:lucious_beauty_app/core/constants/textstyles.dart';
 
-import 'package:lucious_beauty_app/ui/screens/services/all_services_screen.dart';
+import 'package:lucious_beauty_app/ui/screens/all_services/all_services_screen.dart';
 import 'package:lucious_beauty_app/ui/screens/services_details/services_details_screen.dart';
 import 'package:lucious_beauty_app/ui/screens/specific_services/specific_services_view_model.dart';
 import 'package:lucious_beauty_app/ui/widgets/custom_circle_box.dart';

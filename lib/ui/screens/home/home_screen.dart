@@ -10,7 +10,7 @@ import 'package:lucious_beauty_app/core/constants/textstyles.dart';
 import 'package:lucious_beauty_app/ui/screens/cart/cart_screen.dart';
 
 import 'package:lucious_beauty_app/ui/screens/home/home_view_model.dart';
-import 'package:lucious_beauty_app/ui/screens/services/all_services_screen.dart';
+import 'package:lucious_beauty_app/ui/screens/all_services/all_services_screen.dart';
 import 'package:lucious_beauty_app/ui/widgets/custom_circle_box.dart';
 import 'package:provider/provider.dart';
 

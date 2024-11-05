@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:lucious_beauty_app/core/constants/colors.dart';
 import 'package:lucious_beauty_app/core/constants/sizes.dart';
 import 'package:lucious_beauty_app/core/constants/strings.dart';
 import 'package:lucious_beauty_app/core/constants/textstyles.dart';
 import 'package:lucious_beauty_app/ui/screens/auth/register_screen.dart';
-import 'package:lucious_beauty_app/ui/screens/home/home_screen.dart';
 import 'package:lucious_beauty_app/ui/screens/root/root_screen.dart';
 import 'package:lucious_beauty_app/ui/widgets/custom_button.dart';
 import 'package:lucious_beauty_app/ui/widgets/custom_textfeild.dart';

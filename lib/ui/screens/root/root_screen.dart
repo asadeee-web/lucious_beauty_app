@@ -17,15 +17,7 @@ class RootScreen extends StatelessWidget {
       child: Consumer<RootViewModel>(
           builder: (context, model, child) => Scaffold(
                 backgroundColor: whiteColor,
-
-                ///
-                /// Body
-                ///
                 body: model.allScreen[model.selectedScreen],
-
-                ///
-                /// Bottom Bar
-                ///
                 bottomNavigationBar: _bottomAppbar(model),
               )),
     );

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:lucious_beauty_app/core/constants/colors.dart';
 import 'package:lucious_beauty_app/core/constants/sizes.dart';
 import 'package:lucious_beauty_app/core/constants/strings.dart';
 import 'package:lucious_beauty_app/core/constants/textstyles.dart';
-import 'package:lucious_beauty_app/ui/screens/booking/components/book_appointment.dart';
 import 'package:lucious_beauty_app/ui/widgets/custom_circle_box.dart';
 
 import 'package:lucious_beauty_app/ui/widgets/custom_unfilled_button.dart';
@@ -42,8 +40,9 @@ class BookingDetailsScreen extends StatelessWidget {
             Positioned(
               bottom: 0,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-                decoration: BoxDecoration(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                decoration: const BoxDecoration(
                     color: whiteColor,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(50),
@@ -64,11 +63,11 @@ class BookingDetailsScreen extends StatelessWidget {
                       style: style16.copyWith(color: greyColor),
                     ),
                     sizedBox20,
-                    Text(
+                    const Text(
                       "Sat, 22 August 2022",
                       style: style20,
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Padding(
                       padding: const EdgeInsets.only(
                           bottom: 30, left: 10, right: 10),

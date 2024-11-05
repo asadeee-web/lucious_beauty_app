@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lucious_beauty_app/core/constants/colors.dart';
 import 'package:lucious_beauty_app/core/constants/decorations.dart';
 import 'package:lucious_beauty_app/core/constants/strings.dart';
 import 'package:lucious_beauty_app/core/constants/textstyles.dart';
-import 'package:lucious_beauty_app/ui/screens/home/home_screen.dart';
 import 'package:lucious_beauty_app/ui/screens/root/root_screen.dart';
-import 'package:lucious_beauty_app/ui/screens/services/all_services_view_model.dart';
+import 'package:lucious_beauty_app/ui/screens/all_services/all_services_view_model.dart';
 import 'package:lucious_beauty_app/ui/screens/specific_services/specific_services_screen.dart';
 import 'package:lucious_beauty_app/ui/widgets/custom_circle_box.dart';
 import 'package:provider/provider.dart';
