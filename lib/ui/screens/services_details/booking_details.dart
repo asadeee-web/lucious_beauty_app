@@ -5,6 +5,7 @@ import 'package:lucious_beauty_app/core/constants/colors.dart';
 import 'package:lucious_beauty_app/core/constants/sizes.dart';
 import 'package:lucious_beauty_app/core/constants/strings.dart';
 import 'package:lucious_beauty_app/core/constants/textstyles.dart';
+import 'package:lucious_beauty_app/ui/screens/booking/components/book_appointment.dart';
 import 'package:lucious_beauty_app/ui/widgets/custom_circle_box.dart';
 
 import 'package:lucious_beauty_app/ui/widgets/custom_unfilled_button.dart';

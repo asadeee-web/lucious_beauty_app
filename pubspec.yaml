@@ -38,6 +38,7 @@ dependencies:
   flutter_screenutil: 
   provider: ^6.1.2
   get: 
+  table_calendar: ^3.1.2
 
 dev_dependencies:
   flutter_test:

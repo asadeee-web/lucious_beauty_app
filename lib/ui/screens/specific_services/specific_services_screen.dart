@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lucious_beauty_app/core/constants/colors.dart';
 import 'package:lucious_beauty_app/core/constants/decorations.dart';
 import 'package:lucious_beauty_app/core/constants/strings.dart';
 import 'package:lucious_beauty_app/core/constants/textstyles.dart';
-import 'package:lucious_beauty_app/core/models/services.dart';
 
 import 'package:lucious_beauty_app/ui/screens/services/all_services_screen.dart';
 import 'package:lucious_beauty_app/ui/screens/services_details/services_details_screen.dart';
@@ -13,6 +11,7 @@ import 'package:lucious_beauty_app/ui/screens/specific_services/specific_service
 import 'package:lucious_beauty_app/ui/widgets/custom_circle_box.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class SpecificServicesScreen extends StatelessWidget {
   //final ServicesModel? servicesModel;
   String catogoryName;

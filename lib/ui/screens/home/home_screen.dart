@@ -200,7 +200,7 @@ _ourServices(BuildContext context, HomeViewModel model) {
       ),
       sizedBox10,
       SizedBox(
-        height: 130,
+        height: 120,
         child: ListView.builder(
             itemCount: model.listServicesModel.length,
             scrollDirection: Axis.horizontal,
