@@ -8,13 +8,15 @@ import 'package:lucious_beauty_app/core/constants/textstyles.dart';
 import 'package:lucious_beauty_app/core/models/services.dart';
 
 import 'package:lucious_beauty_app/ui/screens/services/all_services_screen.dart';
+import 'package:lucious_beauty_app/ui/screens/services_details/services_details_screen.dart';
 import 'package:lucious_beauty_app/ui/screens/specific_services/specific_services_view_model.dart';
 import 'package:lucious_beauty_app/ui/widgets/custom_circle_box.dart';
 import 'package:provider/provider.dart';
 
 class SpecificServicesScreen extends StatelessWidget {
-  final ServicesModel servicesModel;
-  const SpecificServicesScreen({super.key, required this.servicesModel});
+  //final ServicesModel? servicesModel;
+  String catogoryName;
+  SpecificServicesScreen({super.key, required this.catogoryName});
 
   @override
   Widget build(BuildContext context) {
@@ -49,31 +51,34 @@ class SpecificServicesScreen extends StatelessWidget {
                         width: 10,
                       ),
                       Text(
-                        "${servicesModel.title}",
+                        "${catogoryName}",
                         style: lowanStyle22,
                       ),
                     ],
                   ),
                 ),
-                body: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: GridView.builder(
-                        scrollDirection: Axis.vertical,
-                        physics: const BouncingScrollPhysics(),
-                        shrinkWrap: true,
-                        itemCount: model.listSpecificServices.length,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                mainAxisSpacing: 15,
-                                crossAxisSpacing: 15),
-                        itemBuilder: (context, index) {
-                          return Container(
+                body: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: GridView.builder(
+                      //scrollDirection: Axis.vertical,
+                      physics: const BouncingScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: model.listSpecificServices.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisExtent: 250,
+                              mainAxisSpacing: 15,
+                              crossAxisSpacing: 15),
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            Get.to(ServicesDetailsScreen(
+                                specificServicesModel:
+                                    model.listSpecificServices[index]));
+                          },
+                          child: Container(
                             padding: const EdgeInsets.all(8),
-                            //margin: const EdgeInsets.only(left: 10),
-                            // width: 89.w,
-                            // height: 97.h,
                             decoration: boxDecoration,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -82,9 +87,9 @@ class SpecificServicesScreen extends StatelessWidget {
                                 Center(
                                   child: Image.asset(
                                     "${model.listSpecificServices[index].imgUrl}",
-                                    fit: BoxFit.contain,
-                                    width: 125.w,
-                                    height: 115.h,
+                                    fit: BoxFit.cover,
+                                    // width: 125.w,
+                                    // height: 115.h,
                                   ),
                                 ),
                                 //sizedBox5,
@@ -117,9 +122,9 @@ class SpecificServicesScreen extends StatelessWidget {
                                 )
                               ],
                             ),
-                          );
-                        }),
-                  ),
+                          ),
+                        );
+                      }),
                 ),
               )),
     );

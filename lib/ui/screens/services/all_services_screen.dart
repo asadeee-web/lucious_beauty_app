@@ -55,13 +55,15 @@ class AllServicesScreen extends StatelessWidget {
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
+                                  mainAxisExtent: 250,
                                   mainAxisSpacing: 15,
                                   crossAxisSpacing: 15),
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onTap: () {
                                 Get.to(SpecificServicesScreen(
-                                  servicesModel: model.listServicesModel[index],
+                                  catogoryName:
+                                      model.listServicesModel[index].title!,
                                 ));
                               },
                               child: Container(
@@ -75,8 +77,7 @@ class AllServicesScreen extends StatelessWidget {
                                   children: [
                                     Image.asset(
                                       "${model.listServicesModel[index].image}",
-                                      width: 64.w,
-                                      height: 58.h,
+                                      fit: BoxFit.cover,
                                     ),
                                     //sizedBox5,
                                     Text(

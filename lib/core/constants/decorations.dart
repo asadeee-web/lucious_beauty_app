@@ -10,5 +10,9 @@ BoxDecoration shadow_boxDecoration = BoxDecoration(
     borderRadius: BorderRadius.circular(6),
     color: whiteColor,
     boxShadow: [
-      BoxShadow(blurRadius: 4, spreadRadius: 0, offset: Offset(0, 4))
+      const BoxShadow(
+          color: const Color.fromARGB(0, 0, 0, 12),
+          blurRadius: 4,
+          spreadRadius: 0,
+          offset: Offset(0, 4))
     ]);

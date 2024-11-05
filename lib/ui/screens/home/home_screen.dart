@@ -7,6 +7,7 @@ import 'package:lucious_beauty_app/core/constants/decorations.dart';
 import 'package:lucious_beauty_app/core/constants/sizes.dart';
 import 'package:lucious_beauty_app/core/constants/strings.dart';
 import 'package:lucious_beauty_app/core/constants/textstyles.dart';
+import 'package:lucious_beauty_app/ui/screens/cart/cart_screen.dart';
 
 import 'package:lucious_beauty_app/ui/screens/home/home_view_model.dart';
 import 'package:lucious_beauty_app/ui/screens/services/all_services_screen.dart';
@@ -74,8 +75,12 @@ _header(BuildContext context) {
               )
             ],
           ),
-          Spacer(),
-          CustomCircleBox(image: Image.asset(cartIcon)),
+          const Spacer(),
+          CustomCircleBox(
+              onTap: () {
+                Get.to(CartScreen());
+              },
+              image: Image.asset(cartIcon)),
         ],
       ),
     ],
@@ -95,7 +100,7 @@ _exclusiveOffer(BuildContext context) {
 
       //Card>>>>
       Container(
-        height: 140,
+        // height: 140,
         padding: const EdgeInsets.only(left: 20, top: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
@@ -103,10 +108,10 @@ _exclusiveOffer(BuildContext context) {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
+          //crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -114,10 +119,12 @@ _exclusiveOffer(BuildContext context) {
                   style:
                       lowanStyle20.copyWith(fontSize: 15, color: primaryColor),
                 ),
+                sizedBox10,
                 Text(
                   "Look more beautiful and\nSave more discount.",
                   style: lowanStyle20.copyWith(fontSize: 15, color: whiteColor),
                 ),
+                sizedBox10,
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
@@ -193,7 +200,7 @@ _ourServices(BuildContext context, HomeViewModel model) {
       ),
       sizedBox10,
       SizedBox(
-        height: 120,
+        height: 130,
         child: ListView.builder(
             itemCount: model.listServicesModel.length,
             scrollDirection: Axis.horizontal,
@@ -208,8 +215,7 @@ _ourServices(BuildContext context, HomeViewModel model) {
                   children: [
                     Image.asset(
                       "${model.listServicesModel[index].image}",
-                      width: 37,
-                      height: 37,
+                      fit: BoxFit.cover,
                     ),
                     sizedBox5,
                     Text(
@@ -237,28 +243,28 @@ _featureServices(BuildContext context, HomeViewModel model) {
       ),
       sizedBox10,
       SizedBox(
-        height: 100,
+        height: 71,
         child: ListView.builder(
             itemCount: 3,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return Container(
-                width: 267,
+                //width: 267,
                 margin: const EdgeInsets.only(right: 10),
                 padding: const EdgeInsets.all(5),
                 decoration: boxDecoration,
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Image.asset(
-                      "assets/images/pedicure_image.png",
-                      width: 78,
-                      height: 69,
+                      pedicure,
+                      fit: BoxFit.cover,
                     ),
                     const SizedBox(
                       width: 5,
                     ),
                     const Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -270,6 +276,14 @@ _featureServices(BuildContext context, HomeViewModel model) {
                           style: style14,
                         ),
                       ],
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10, left: 15),
+                      child: Image.asset(
+                        forwardarrowIcon,
+                        color: primaryColor,
+                      ),
                     ),
                     // Image.asset(
                     //   forwardarrowIcon,
@@ -315,40 +329,45 @@ _upCommingBookings(BuildContext context, HomeViewModel model) {
       ),
       sizedBox10,
       SizedBox(
-        height: 100,
+        height: 71,
         child: ListView.builder(
             itemCount: 3,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return Container(
-                width: 267,
+                //width: 267,
                 margin: const EdgeInsets.only(right: 10),
                 padding: const EdgeInsets.all(5),
                 decoration: boxDecoration,
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Image.asset(
-                      "assets/images/pedicure_image.png",
-                      width: 78,
-                      height: 69,
+                      manicure,
+                      fit: BoxFit.cover,
                     ),
                     const SizedBox(
                       width: 5,
                     ),
-                    const Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Classic Pedicure",
-                          style: style16P,
+                        const Text(
+                          "Classic Manicure",
+                          style: style16,
                         ),
                         Text(
-                          "45 min 59 AED",
-                          style: style14,
+                          "Home",
+                          style: style12.copyWith(color: primaryColor),
                         ),
+                        Text(
+                          "Sat, 22 August 2022",
+                          style: style12.copyWith(color: greyColor),
+                        )
                       ],
                     ),
+
                     // Image.asset(
                     //   forwardarrowIcon,
                     //   width: 14,

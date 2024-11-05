@@ -10,7 +10,5 @@ class HomeViewModel extends BaseViewModel {
     ServicesModel(id: "1", image: massage, title: "Massage"),
     ServicesModel(id: "1", image: waxing, title: "Waxing"),
     ServicesModel(id: "1", image: threading, title: "Threading"),
-    ServicesModel(id: "1", image: hifu, title: "NUltralucious 7D hifu"),
-    ServicesModel(id: "1", image: slim, title: "Lucious slim RF cavitation"),
   ];
 }
