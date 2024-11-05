@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucious_beauty_app/core/constants/colors.dart';
 
+// ignore: must_be_immutable
 class CustomCircleBox extends StatelessWidget {
   VoidCallback? onTap;
   Image image;

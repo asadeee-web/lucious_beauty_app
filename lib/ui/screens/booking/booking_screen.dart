@@ -4,8 +4,6 @@ import 'package:lucious_beauty_app/core/constants/colors.dart';
 import 'package:lucious_beauty_app/core/constants/decorations.dart';
 import 'package:lucious_beauty_app/core/constants/sizes.dart';
 import 'package:lucious_beauty_app/core/constants/textstyles.dart';
-import 'package:lucious_beauty_app/ui/screens/services/all_services_screen.dart';
-import 'package:lucious_beauty_app/ui/widgets/custom_button.dart';
 
 class BookingScreen extends StatelessWidget {
   const BookingScreen({super.key});
@@ -14,7 +12,7 @@ class BookingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Booking",
           style: lowanStyle22,
         ),
@@ -24,13 +22,13 @@ class BookingScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Text(
+              const Text(
                 "Upcoming Bookings",
                 style: style16,
               ),
               sizedBox10,
               Container(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 decoration: shadow_boxDecoration,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,7 +45,7 @@ class BookingScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               "Classic Manicure",
                               style: style14,
                             ),
@@ -64,7 +62,7 @@ class BookingScreen extends StatelessWidget {
                         Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.more_vert,
                               color: greyColor,
                             ),

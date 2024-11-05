@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lucious_beauty_app/core/constants/colors.dart';
 import 'package:lucious_beauty_app/core/constants/textstyles.dart';
 
+// ignore: must_be_immutable
 class CustomTextfeild extends StatelessWidget {
   String hintText;
   CustomTextfeild({super.key, required this.hintText});

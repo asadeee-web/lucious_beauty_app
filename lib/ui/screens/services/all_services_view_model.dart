@@ -2,7 +2,7 @@ import 'package:lucious_beauty_app/core/constants/strings.dart';
 import 'package:lucious_beauty_app/core/models/services.dart';
 import 'package:lucious_beauty_app/core/view_model/base_view_model.dart';
 
-class HomeViewModel extends BaseViewModel {
+class AllServicesViewModel extends BaseViewModel {
   List<ServicesModel> listServicesModel = [
     ServicesModel(id: "1", image: nails, title: "Nails"),
     ServicesModel(id: "1", image: hair, title: "Hair"),
