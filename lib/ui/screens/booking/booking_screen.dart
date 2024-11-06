@@ -5,7 +5,7 @@ import 'package:lucious_beauty_app/core/constants/decorations.dart';
 import 'package:lucious_beauty_app/core/constants/sizes.dart';
 import 'package:lucious_beauty_app/core/constants/strings.dart';
 import 'package:lucious_beauty_app/core/constants/textstyles.dart';
-import 'package:lucious_beauty_app/ui/screens/services_details/booking_details.dart';
+import 'package:lucious_beauty_app/ui/screens/booking_details/booking_details.dart';
 
 class BookingScreen extends StatelessWidget {
   const BookingScreen({super.key});
