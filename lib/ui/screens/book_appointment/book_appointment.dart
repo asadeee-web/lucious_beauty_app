@@ -4,30 +4,41 @@ import 'package:lucious_beauty_app/core/constants/colors.dart';
 import 'package:lucious_beauty_app/core/constants/sizes.dart';
 import 'package:lucious_beauty_app/core/constants/strings.dart';
 import 'package:lucious_beauty_app/core/constants/textstyles.dart';
+import 'package:lucious_beauty_app/ui/screens/book_appointment/book_appointment_view_model.dart';
+import 'package:lucious_beauty_app/ui/widgets/custom_book_appointment_button.dart';
 import 'package:lucious_beauty_app/ui/widgets/custom_button.dart';
 import 'package:lucious_beauty_app/ui/widgets/custom_circle_box.dart';
 import 'package:lucious_beauty_app/ui/widgets/custom_textfeild.dart';
+import 'package:provider/provider.dart';
 
 class BookAppointment extends StatelessWidget {
   const BookAppointment({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          //Header>>>
-          _header(context),
+    return ChangeNotifierProvider(
+      create: (context) => BookAppointmentViewModel(),
+      child:
+          Consumer<BookAppointmentViewModel>(builder: (context, model, child) {
+        return Scaffold(
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //Header>>>
+                _header(context),
 
-          sizedBox40,
+                sizedBox40,
 
-          //Available Time Slot>>>
+                //Available Time Slot>>>
 
-          //Fill Out Your Details>>>
-          _filloutYourDetail(),
-        ],
-      ),
+                //Fill Out Your Details>>>
+                _filloutYourDetail(model),
+              ],
+            ),
+          ),
+        );
+      }),
     );
   }
 }
@@ -137,7 +148,7 @@ _availableTimeSlot() {
   );
 }
 
-_filloutYourDetail() {
+_filloutYourDetail(BookAppointmentViewModel model) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: Column(
@@ -167,8 +178,24 @@ _filloutYourDetail() {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _toggleButton("assets/icons/home2_icon.png", "Home", greyColor),
-            _toggleButton("assets/icons/salon_icon.png", "Salon", greyColor)
+            CustomBookAppointmentButton(
+                ontap: () {
+                  model.homeToggle();
+                },
+                img: "assets/icons/home2_icon.png",
+                imgcolor: model.isSelect ? whiteColor : greyColor,
+                title: "Home",
+                titlecolor: model.isSelect ? whiteColor : greyColor,
+                containerclr: model.isSelect ? primaryColor : whiteColor),
+            CustomBookAppointmentButton(
+                ontap: () {
+                  model.salonToggle();
+                },
+                img: "assets/icons/salon_icon.png",
+                imgcolor: model.unSeclect ? whiteColor : greyColor,
+                title: "Salon",
+                titlecolor: model.unSeclect ? whiteColor : greyColor,
+                containerclr: model.unSeclect ? primaryColor : whiteColor)
           ],
         ),
         sizedBox20,
@@ -176,30 +203,6 @@ _filloutYourDetail() {
             "We only serve houses in 45km wide of area. Please check if your house meets this requirement before booking. Thank you for your understanding."),
         sizedBox20,
         CustomButton(text: "Proceed", onTap: () {})
-      ],
-    ),
-  );
-}
-
-Container _toggleButton(image, text, color) {
-  return Container(
-    height: 48,
-    width: 150,
-    decoration: BoxDecoration(
-        color: whiteColor, borderRadius: BorderRadius.circular(8)),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Image.asset(
-          image,
-          width: 26,
-          height: 26,
-          color: color,
-        ),
-        Text(
-          text,
-          style: style16,
-        )
       ],
     ),
   );
